@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(50deg, pink, transparent);
+    margin: 0;
+    padding: 20px
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.header p {
+    margin: 10px 0;
+}
+
+.toggle-view-btn {
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f3d3e3, rgb(228, 129, 162));
+    border: 1.5px solid black;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toggle-view-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 3px rgb(255, 255, 255);
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, white, rgb(198, 87, 141) );
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 3px 3px 4px #ffffff;
+    width: 300px;
+    animation: pulse 1.5s infinite;
+    border-radius: 12px;
+}
+
+.modal-content h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-btn, 
+.login-btn {
+    border: 1px solid black;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.login-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px black;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card,
+.supply-card {
+    background: linear-gradient(115deg, #e3c2c2, transparent);
+    border-radius: 20px;
+    padding: 15px;
+    border: 2px solid #644949;
+    box-shadow: 3px 3px 3px 2px #5c5a5a;
+    transition: transform 0.2s ease, 0.2s ease;
+}
+
+.stat-card:hover,
+.supply-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px black;
+}
+
+.stat-card h3,
+.supply-card h4 {
+    margin: 0 0 10px;
+}
+
+/* Supplies Section */
+.low {
+    color: red;
+}
+
+.available {
+    color: green;
+}
+
+.low-btn,
+.available-btn {
+    border-radius: 15px;
+    padding: 5px 10px;
+    border: 2px solid #939191;
+    cursor: pointer;
+}
+
+.low-btn {
+    background-color: #f8d7da;
+}
+
+.available-btn {
+    background-color: #d4edda;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+#username{
+    border-radius: 25px;
+    margin-left: 15px;
+    padding-left:6px;
+    padding-top: 4px;
+    padding-bottom:4px;
+}
+#password{
+    border-radius: 25px;
+    margin-left: 15px;
+    padding-left:6px;
+    padding-top: 4px;
+    padding-bottom:4px;
+}

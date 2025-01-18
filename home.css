@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
 }
 
 .main-container {
@@ -173,6 +174,11 @@
     overflow: hidden;
     height: 379px;
     cursor: pointer;
+    box-shadow: 10px 7px 8px 2px;
+}
+
+.card:hover{
+    scale: 1.05;
 }
 
 .card h1 {

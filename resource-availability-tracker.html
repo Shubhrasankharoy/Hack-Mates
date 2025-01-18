@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Resource Tracker</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="resource-availability-tracker.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Login Modal -->
+        <div v-if="showLoginModal" class="modal">
+            <div class="modal-content">
+                <h3>Admin Login</h3>
+                <form @submit.prevent="handleLogin" :class="{ 'shake': loginError }">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input v-model="loginForm.username" type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input v-model="loginForm.password" type="password" id="password" required>
+                    </div>
+                    <p v-if="loginError" class="error">Invalid credentials</p>
+                    <div class="button-group">
+                        <button type="button" @click="showLoginModal = false" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="login-btn">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Hospital Resources Tracker</h1>
+            <p>Real-time availability dashboard</p>
+            <button @click="toggleAdminView" class="toggle-view-btn">
+                {{ isAdmin ? 'Switch to Patient View' : 'Switch to Admin View' }}
+            </button>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="grid">
+            <div v-for="stat in stats" :key="stat.title" class="stat-card">
+                <h3>{{ stat.title }}</h3>
+                <p>{{ stat.available }}/{{ stat.total }}</p>
+                <p>Available</p>
+                <div v-if="isAdmin" class="button-group">
+                    <button @click="updateStat(stat, -1)" class="decrement-btn">-</button>
+                    <button @click="updateStat(stat, 1)" class="increment-btn">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Supplies Section -->
+        <section class="supplies">
+            <h2>Medical Supplies</h2>
+            <div class="grid">
+                <div v-for="supply in supplies" :key="supply.name" class="supply-card">
+                    <h4>{{ supply.name }}</h4>
+                    <p :class="supply.status === 'Low' ? 'low' : 'available'">{{ supply.status }}</p>
+                    <div v-if="isAdmin" class="button-group">
+                        <button @click="updateSupply(supply, 'Low')" class="low-btn">Low</button>
+                        <button @click="updateSupply(supply, 'Available')" class="available-btn">Available</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Last Updated -->
+        <footer class="footer">
+            Last updated: {{ lastUpdated }}
+        </footer>
+    </div>
+
+    <script src="resource-availability-tracker.js"></script>
+</body>
+
+</html>
