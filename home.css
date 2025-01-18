@@ -172,6 +172,7 @@
     position: relative;
     overflow: hidden;
     height: 379px;
+    cursor: pointer;
 }
 
 .card h1 {

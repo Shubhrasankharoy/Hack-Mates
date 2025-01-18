@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System</title>
+    <link rel="stylesheet" href="login_page.css">
+</head>
+<body>
+    <h1 class="HOSP">HOSPITAL MANAGEMENT SYSTEM</h1>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Creat Acount</h1>
+                <span>use your email for resistration</span>
+                <input type="text" placeholder="Name" id="name">
+                <input type="email" placeholder="Email" id="resistration-email">
+                <input type="password" placeholder="Password" id="resistration-pass">
+                <button id="sign-up-btn">Sign Up</button>
+            </form>
+        </div>
+        
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <span>use your email and password</span>
+                <input type="email" placeholder="Email" id="login-email">
+                <input type="password" placeholder="Password" id="login-pass">
+                <a href="#">Forgot Your Password?</a>
+                <button id="sign-in-btn">Sign In</button>
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome to Hospital</h1>
+                    <p>Login with the Staff ID(Gmail) and Password</p>
+                    <button class="hidden" id="register">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="login_page.js" defer></script>
+</body>
+</html>
