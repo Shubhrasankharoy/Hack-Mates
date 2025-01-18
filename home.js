@@ -7,3 +7,7 @@ cards[0].addEventListener("click",()=>{
 cards[1].addEventListener("click",()=>{
     window.location.href = "resource-availability-tracker.html";
 })
+
+cards[3].addEventListener("click",()=>{
+    window.location.href = "patient_data_tracking.html";
+})

@@ -1,0 +1,129 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(69deg, #db7575, #e1b2b26e);
+    margin: 0;
+    padding: 20px
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    gap: 29px;
+}
+
+.dropdown {
+        font-weight: 600;
+        background: linear-gradient(45deg, #b43535, #d9d0626b);
+        padding: 10px;
+        border-radius: 12px;
+        color: rgb(0, 0, 0);
+        box-shadow: 0px 0px 5px 3px #ffe4e4;
+}
+
+.dropdown:hover{
+    scale: 1.03;
+}
+
+.button, .button-secondary {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0px 0px 5px 3px #ffe4e4;
+    border:1px;
+}
+.button:hover{
+    scale:1.03;
+}
+
+.button {
+    background: linear-gradient(45deg, #b43535, #d9d0626b);
+    color: #000000;
+}
+
+.button-secondary {
+    background-color: #ddd;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(45deg, #ffffff, #d88d8d);
+    padding: 20px;
+    border: 2px solid #845c5c;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.textarea, .input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(157 100 100);
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+#marg{
+    margin-bottom: 15px;
+}

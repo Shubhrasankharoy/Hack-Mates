@@ -1,4 +1,23 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+import { getDatabase } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js';
+
 const { createApp } = Vue
+
+const firebaseConfig = {
+    apiKey: "AIzaSyB9utGKsSRxTblN5IJgq9u8gzNPyFtNTKI",
+    authDomain: "showdown-8c6f2.firebaseapp.com",
+    projectId: "showdown-8c6f2",
+    storageBucket: "showdown-8c6f2.firebasestorage.app",
+    messagingSenderId: "346675153216",
+    appId: "1:346675153216:web:2a6f91d3417f4ed0ce12a5",
+    measurementId: "G-5Z4WWN48FQ"
+}
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
 
 createApp({
     data() {
