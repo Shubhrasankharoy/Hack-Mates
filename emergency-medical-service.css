@@ -1,0 +1,174 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4A0A0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    border-radius: 12px;
+    font-size: 24px;
+    background: repeating-linear-gradient(45deg, #dbc0c0, #ffffffc4 100px);
+    padding: 10px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 5px 2px #d16565;
+}
+
+/* Login Section */
+.login-section {
+    background-color: #FFF;
+    padding: 10px;
+    border: 1px solid #000;
+    box-shadow: 3px 3px 8px 1px #b45b5b;
+    border-radius: 15px;
+}
+
+.login-form input {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #000;
+}
+
+.login-form button {
+    background: linear-gradient(45deg, #f36868, #ff7676ab);
+    color: #FFF;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 9px;
+}
+.login-form button:hover{
+    scale:1.03;
+}
+.login-section:hover{
+    scale:1.03;
+}
+
+.logged-in-status span {
+    margin-right: 10px;
+}
+
+.logged-in-status button {
+    background-color: #FF0000;
+    color: #FFF;
+    border-radius: 9px;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.login-error {
+    color: #FF0000;
+    margin-top: 5px;
+}
+
+/* Table */
+.table-container {
+    background-color: #FFF;
+    padding: 10px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 7px 1px #c46565;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: left;
+}
+
+th {
+    background-color: #DDD;
+}
+
+.status {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.status-critical {
+    background-color: #FFBABA;
+    color: #FF0000;
+}
+
+.status-warning {
+    background-color: #FFF3BA;
+    color: #FF9900;
+}
+
+.status-stable {
+    background-color: #BAFFC9;
+    color: #00CC44;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: linear-gradient(45deg, #ffa2a2d1, #ff0404e6);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #dcb6b6;
+    box-shadow: 4px 4px 5px 2px #7a7777;
+    width: 400px;
+}
+
+.modal-actions button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.modal-actions button:first-child {
+    background-color: #28A745;
+    color: #FFF;
+    border-radius: 9px;
+    border: none;
+}
+
+.modal-actions button:last-child {
+    background-color: #FF0000;
+    color: #FFF;
+    border: none;
+    border-radius: 9px;
+}
+
+/* Utility */
+.hidden {
+    display: none;
+}
+.modal-actions button:hover{
+    scale:1.03;
+}

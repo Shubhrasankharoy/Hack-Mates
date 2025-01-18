@@ -1,23 +1,12 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-import { getDatabase } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js';
 
-const { createApp } = Vue
+const { createApp } = Vue;
 
-const firebaseConfig = {
-    apiKey: "AIzaSyB9utGKsSRxTblN5IJgq9u8gzNPyFtNTKI",
-    authDomain: "showdown-8c6f2.firebaseapp.com",
-    projectId: "showdown-8c6f2",
-    storageBucket: "showdown-8c6f2.firebasestorage.app",
-    messagingSenderId: "346675153216",
-    appId: "1:346675153216:web:2a6f91d3417f4ed0ce12a5",
-    measurementId: "G-5Z4WWN48FQ"
-}
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
+// Initialize emailjs
+(function () {
+    emailjs.init({
+        publicKey: "R71ziGBLO8_dehXJg",
+    });
+})();
 
 createApp({
     data() {
@@ -30,8 +19,8 @@ createApp({
             },
             loginError: false,
             adminCredentials: {
-                username: 'staff',
-                password: 'password'
+                username: 'admin',
+                password: 'admin123'
             },
             stats: [
                 { title: 'Doctors', available: 15, total: 20 },
@@ -43,14 +32,14 @@ createApp({
             ],
             supplies: [
                 { name: 'Oxygen Cylinders', status: 'Available' },
-                { name: 'Blood Units', status: 'Low' },
+                { name: 'Blood Units', status: 'Available' },
                 { name: 'Ventilators', status: 'Available' },
                 { name: 'PPE Kits', status: 'Available' },
-                { name: 'Medical Masks', status: 'Low' },
+                { name: 'Medical Masks', status: 'Available' },
                 { name: 'Surgical Equipment', status: 'Available' }
             ],
             lastUpdated: new Date().toLocaleString()
-        }
+        };
     },
     methods: {
         toggleAdminView() {
@@ -61,7 +50,7 @@ createApp({
             }
         },
         handleLogin() {
-            if (this.loginForm.username === this.adminCredentials.username && 
+            if (this.loginForm.username === this.adminCredentials.username &&
                 this.loginForm.password === this.adminCredentials.password) {
                 this.isAdmin = true;
                 this.showLoginModal = false;
@@ -76,7 +65,7 @@ createApp({
             }
         },
         updateStat(stat, change) {
-            if ((change > 0 && stat.available < stat.total) || 
+            if ((change > 0 && stat.available < stat.total) ||
                 (change < 0 && stat.available > 0)) {
                 stat.available += change;
                 this.lastUpdated = new Date().toLocaleString();
@@ -85,6 +74,34 @@ createApp({
         updateSupply(supply, status) {
             supply.status = status;
             this.lastUpdated = new Date().toLocaleString();
+        },
+        send_mail() {
+            let param = {
+                to_name: 'Ram Biswas',
+                from_name: "HOSPITAL MANAGEMENT SYSTEM",
+                message: "Alert: One of the supplies is low!",
+                to_gmail: 'tuekejanis.5@gmail.com'
+            };
+
+            emailjs.send("service_xu1bvyg", 'template_k2aqsou', param)
+                .then(response => {
+                    console.log('Email sent successfully:', response.status, response.text);
+                })
+                .catch(error => {
+                    console.error('Error sending email:', error);
+                });
+        }
+    },
+    watch: {
+        supplies: {
+            deep: true,
+            handler(newSupplies) {
+                const lowSupply = newSupplies.find(supply => supply.status.toLowerCase() === 'low');
+                if (lowSupply) {
+                    console.log(`Low supply detected: ${lowSupply.name}`);
+                    this.send_mail();
+                }
+            }
         }
     }
-}).mount('#app')
+}).mount('#app');

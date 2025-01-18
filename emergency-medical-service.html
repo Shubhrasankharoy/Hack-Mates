@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Patient Dashboard</title>
+    <link rel="stylesheet" href="emergency-medical-service.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Emergency Patient Dashboard</h1>
+            <div class="login-section">
+                <div id="loginForm" class="login-form">
+                    <input type="text" id="username" placeholder="Username" style="border-radius: 9px;">
+                    <input type="password" id="password" placeholder="Password" style="border-radius: 9px;">
+                    <button onclick="handleLogin()">Doctor Log In</button>
+                </div>
+                <div id="loggedInStatus" class="logged-in-status hidden">
+                    <span id="doctorName"></span>
+                    <button onclick="handleLogout()">Logout</button>
+                </div>
+                <div id="loginError" class="login-error hidden">Invalid credentials</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Age</th>
+                            <th>Heart Rate</th>
+                            <th>Oxygen Level</th>
+                            <th>Blood Pressure</th>
+                            <th>Status</th>
+                            <th>Last Updated By</th>
+                            <th>Last Updated Time</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientTableBody">
+                        <!-- Patient data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Edit Modal -->
+        <div id="editModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>EDIT PATIENT DATA</h2>
+                <form id="editForm">
+                    <input type="hidden" id="editPatientIndex" style="border-radius:4px">
+                    <div class="form-group" style="margin-bottom:5px">
+                        <label for="editHeartRate">Heart Rate (bpm)</label>
+                        <input type="number" id="editHeartRate" style="border-radius:4px">
+                    </div>
+                    <div class="form-group" style="margin-bottom:5px">
+                        <label for="editOxygenLevel">Oxygen Level (%)</label>
+                        <input type="number" id="editOxygenLevel" style="border-radius:4px">
+                    </div>
+                    <div class="form-group" style="margin-bottom:5px">
+                        <label for="editBloodPressure">Blood Pressure</label>
+                        <input type="text" id="editBloodPressure" placeholder="120/80" style="border-radius:4px">
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit">Save</button>
+                        <button type="button" onclick="closeEditModal()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="emergency-medical-service.js"></script>
+</body>
+</html>

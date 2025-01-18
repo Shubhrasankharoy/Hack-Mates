@@ -17,42 +17,40 @@ const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
 
+// Sample data structure for patients
 let patients = [];
 
- async function getdata() {
-    // const patientList = document.getElementById('patientList');
+// Function to get data from Firebase Realtime Database
+async function getData() {
     const dbRef = ref(getDatabase());
-    get(child(dbRef, `patient`)).then((snapshot) => {
-        if (snapshot.exists()) {
-            const data1 = snapshot.val();
-
-            for (const element of Object.values(data1)) {
-                console.log(element);
-                patients.push(element);            
-            }
-            /* patientList.innerHTML = patients.map(patient => `
-                <tr>
-                    <td>${patient.name}</td>
-                    <td>${patient.age}</td>
-                    <td>Level ${patient.triageLevel}</td>
-                    <td>${patient.status}</td>
-                </tr>
-            `).join(''); */
-
-            console.log(patients.length);
-        } else {
-            console.log("No data available");
-        }
-    }).catch((error) => {
-        console.error(error);
-    });
+    const snapshot = await get(child(dbRef, 'patient'));
+    if (snapshot.exists()) {
+        const data = snapshot.val();
+        patients = Object.values(data);
+    } else {
+        console.log("No data available");
+    }
 }
 
+// Function to update patient list
+function updatePatientList() {
+    const patientList = document.getElementById('patientList');
+    patients.sort((a, b) => a.triageLevel - b.triageLevel);
+    
+    patientList.innerHTML = patients.map(patient => `
+        <tr>
+            <td>${patient.name}</td>
+            <td>${patient.age}</td>
+            <td>Level ${patient.triageLevel}</td>
+            <td>${patient.status}</td>
+        </tr>
+    `).join('');
+}
 
-document.getElementById('patientForm').addEventListener('submit', function (e) {
+// Event listener for patient form submission
+document.getElementById('patientForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
-
     const patient = {
         'patient_id': "P" + Math.floor(1000 + Math.random() * 9000),
         name: e.target.elements[0].value,
@@ -62,47 +60,42 @@ document.getElementById('patientForm').addEventListener('submit', function (e) {
         triageLevel: e.target.elements[4].value,
         status: "Waiting"
     };
-
+    
     patients.push(patient);
+    await updateFirebaseData();
     updatePatientList();
     e.target.reset();
 });
 
-function updatePatientList() {
-    const patientList = document.getElementById('patientList');
-    patients.sort((a, b) => a.triageLevel - b.triageLevel);
-
+// Function to update Firebase Realtime Database
+async function updateFirebaseData() {
+    const db = getDatabase();
     for (let i = 0; i < patients.length; i++) {
         const object = patients[i];
-        const db = getDatabase();
-        set(ref(db, 'patient/' + object.patient_id), {
-            'patient_id': object.patient_id,
+        await set(ref(db, 'patient/' + object.patient_id), {
+            patient_id: object.patient_id,
             name: object.name,
             age: object.age,
             emergency_type: object.emergency_type,
             symptoms: object.symptoms,
             triageLevel: object.triageLevel,
             status: object.status
-        }).then(() => {
-            console.log('Done...');
         });
     }
-
-    patientList.innerHTML = patients.map(patient => `
-        <tr>
-            <td>${patient.name}</td>
-            <td>${patient.age}</td>
-            <td>Level ${patient.triageLevel}</td>
-            <td>${patient.status}</td>
-        </tr>
-    `).join('');
-    console.log(patients);
-    console.log("hiiii");
 }
 
-async function main(){
-    // await getdata();
+// Main function to get data and update patient list
+async function main() {
+    await getData();
     updatePatientList();
 }
 
 main();
+
+
+
+
+
+
+
+
