@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Medical Dashboard</title>
+    <link rel="stylesheet" href="patient_prioritity_system.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header-title">Patient Priortising System</h1>
+        </header>
+
+        <div class="grid">
+            <!-- Patient Form -->
+            <div class="patient-form">
+                <h2 class="patient-form-title">Add Emergency Patient</h2>
+                <form id="patientForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Name</label>
+                        <input type="text" id="name" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="age">Age</label>
+                        <input type="number" id="age" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="emergency-type">Emergency Type</label>
+                        <select id="emergency-type" required class="form-input">
+                            <option value="">Select Emergency Type</option>
+                            <option value="cardiac">Cardiac Emergency</option>
+                            <option value="respiratory">Respiratory Problem</option>
+                            <option value="injury">Physical Injury</option>
+                            <option value="other">Other Medical Emergency</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="symptoms">Symptoms</label>
+                        <textarea id="symptoms" required class="form-input" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="triage-level">Emergency Level</label>
+                        <select id="triage-level" required class="form-input">
+                            <option value="1">Critical - Immediate Attention Required</option>
+                            <option value="2">Severe - Very Urgent</option>
+                            <option value="3">Moderate - Urgent</option>
+                            <option value="4">Mild - Standard Care</option>
+                            <option value="5">Minor - Non-urgent</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button">Add Patient</button>
+                </form>
+            </div>
+
+            <!-- Patient List -->
+            <div class="patient-list">
+                <h2 class="patient-list-title">Current Patients</h2>
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Triage Level</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patientList"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="patient_prioritity_system.js"></script>
+</body>
+</html>
