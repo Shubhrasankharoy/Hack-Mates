@@ -43,12 +43,44 @@
     z-index: 200000;
 }
 
+@media (max-width: 414px) {
+    .nav {
+        height: 47px;
+    }
+}
+
 .nav>div:first-child {
     letter-spacing: 4px;
     padding: 10px;
     color: #DEB9B9;
-    font-size: 52px;
+    font-size: 4.5rem;
     font-weight: 900;
+    text-align: center;
+}
+
+@media (max-width: 1327px) {
+    .nav>div:first-child {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 806px) {
+    .nav>div:first-child {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 690px) {
+    .nav>div:first-child {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 414px) {
+    .nav>div:first-child {
+        font-size: 0.9rem;
+        font-weight: bolder;
+    }
 }
 
 .nav>div:nth-child(2) {
@@ -67,7 +99,7 @@
 }
 
 .search,
-.notification{
+.notification {
     cursor: pointer;
 }
 
@@ -91,13 +123,25 @@
 }
 
 .moto {
-    margin: 90px 0;
+    margin-top: 90px;
     width: 97%;
     height: 647px;
     border-radius: 36px;
     overflow: hidden;
     position: relative;
     box-shadow: 4px 5px 15px 2px;
+}
+
+@media (max-width: 690px) {
+    .moto {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 414px) {
+    .moto {
+        margin-top: 72px;
+    }
 }
 
 .moto>img {
@@ -110,12 +154,24 @@
 .moto h3 {
     font-family: "Jersey 20", serif;
     color: #a15353;
-    font-size: 100px;
+    font-size: 9rem;
     width: 100%;
     position: absolute;
     top: 55%;
     text-align: center;
     letter-spacing: 4px;
+}
+
+@media (max-width: 1530px) {
+    .moto h3 {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 1053px) {
+    .moto h3 {
+        font-size: 4rem;
+    }
 }
 
 .moto>h3 span:first-child {
@@ -146,7 +202,33 @@
     box-shadow: 4px 5px 15px 2px;
 }
 
-.moto>div:hover{
+@media (max-width: 1050px) {
+    .moto>div {
+        width: 248px;
+        height: 62px;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 710px) {
+    .moto>div {
+        width: 194px;
+        height: 53px;
+        font-size: 30px;
+        padding-left: 6px;
+    }
+}
+
+@media (max-width: 512px) {
+    .moto>div {
+        width: 152px;
+        height: 48px;
+        font-size: 25px;
+        padding-left: 6px;
+    }
+}
+
+.moto>div:hover {
     scale: 1.03;
 }
 
@@ -160,6 +242,27 @@
     justify-content: center;
 }
 
+@media (max-width: 1050px) {
+    .moto>div>div {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 710px) {
+    .moto>div>div {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 512px) {
+    .moto>div>div {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 .moto>div>div>img {
     width: 76%;
 }
@@ -168,29 +271,53 @@
     font-family: "Jersey 20", serif;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 31px;
+    gap: 75px;
 }
 
 .card {
-    width: 20%;
+    width: 362px;
+    height: 379px;
     border-radius: 36px;
     padding: 32px;
     position: relative;
     overflow: hidden;
-    height: 379px;
     cursor: pointer;
     box-shadow: 10px 7px 8px 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card:hover{
+@media (max-width: 354px) {
+    .card {
+        width: 269px;
+        height: 308px;
+    }
+}
+
+.card:hover {
     scale: 1.05;
 }
 
 .card h1 {
     letter-spacing: 5px;
     font-size: 53px;
+}
+
+@media (max-width: 400px) {
+    .card h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 354px) {
+    .card h1 {
+        font-size: 30px;
+    }
 }
 
 .card>img {
@@ -270,8 +397,46 @@
     gap: 34px;
 }
 
+@media (max-width: 761px) {
+    .motive{
+        height: 72px;
+    }
+}
+
+@media (max-width: 625px) {
+    .motive{
+        height: 51px;
+        gap: 17px;
+    }
+}
+
+@media (max-width: 493px) {
+    .motive{
+        height: 42px;
+        gap: 17px;
+    }
+}
+
+@media (max-width: 341px) {
+    .motive{
+        padding: 0 14px;
+    }
+}
+
 .motive>img {
     width: 48px;
+}
+
+@media (max-width: 625px) {
+    .motive>img {
+        width: 33px;
+    }
+}
+
+@media (max-width: 493px) {
+    .motive>img {
+        width: 25px;
+    }
 }
 
 .motive>span {
@@ -279,6 +444,36 @@
     font-weight: 900;
     letter-spacing: 4px;
     color: #a15354;
+}
+
+@media (max-width: 1030px) {
+    .motive>span {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 761px) {
+    .motive>span {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 625px) {
+    .motive>span {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 493px) {
+    .motive>span {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 417px) {
+    .motive>span {
+        letter-spacing: 1px;
+    }
 }
 
 .vision {
@@ -298,7 +493,25 @@
     letter-spacing: 4px;
 }
 
-.vision>h1::after{
+@media (max-width: 837px) {
+    .vision>h1 {
+        font-size: 57px;
+    }
+}
+
+@media (max-width: 637px) {
+    .vision>h1 {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 385px) {
+    .vision>h1 {
+        font-size: 32px;
+    }
+}
+
+.vision>h1::after {
     content: "";
     position: absolute;
     left: 0;
@@ -308,12 +521,25 @@
     background-color: #425160;
 }
 
-.vision>p{
-    font-size: 31px;
-    letter-spacing: 2px;
+@media (max-width: 637px) {
+    .vision>h1::after {
+        bottom: 5px;
+    }
 }
 
-footer{
+@media (max-width: 385px) {
+    .vision>h1::after {
+        bottom: 0px;
+    }
+}
+
+.vision>p {
+    font-size: 31px;
+    letter-spacing: 1px;
+    text-align: justify;
+}
+
+footer {
     background-color: #b5a3a3;
     color: #000000;
     width: 100vw;
@@ -321,4 +547,10 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 435px) {
+    footer>p{
+        font-size: 10px;
+    }
 }
