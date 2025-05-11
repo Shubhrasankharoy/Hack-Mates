@@ -14,7 +14,6 @@ let patients = [
 let currentPatient = null;
 let isAdmin = false;
 
-// Initialize patient selector
 function updatePatientSelector() {
     const selector = document.getElementById('patientSelector');
     selector.innerHTML = '<option value="">Select Patient</option>';
@@ -26,7 +25,6 @@ function updatePatientSelector() {
     });
 }
 
-// Patient selection handler
 document.getElementById('patientSelector').addEventListener('change', (e) => {
     if (!e.target.value) return;
     currentPatient = patients.find(p => p.id === e.target.value);
@@ -42,7 +40,6 @@ function updatePatientDisplay() {
     document.getElementById('historyText').value = currentPatient.history;
 }
 
-// Modal functions
 function showModal(modalId) {
     document.getElementById(modalId).style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
@@ -65,7 +62,6 @@ function showAddPatientModal() {
     showModal('addPatientModal');
 }
 
-// Admin functions
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -123,7 +119,6 @@ function addNewPatient() {
     updatePatientSelector();
     closeModal('addPatientModal');
     
-    // Reset form
     document.getElementById('newPatientName').value = '';
     document.getElementById('newPatientId').value = '';
     document.getElementById('newPatientAge').value = '';
@@ -133,5 +128,4 @@ function addNewPatient() {
 
 
 
-// Initialize everything
 updatePatientSelector();

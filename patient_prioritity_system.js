@@ -11,16 +11,12 @@ const firebaseConfig = {
     measurementId: "G-5Z4WWN48FQ"
 }
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
 
-// Sample data structure for patients
 let patients = [];
 
-// Function to get data from Firebase Realtime Database
 async function getData() {
     const dbRef = ref(getDatabase());
     const snapshot = await get(child(dbRef, 'patient'));
@@ -32,7 +28,6 @@ async function getData() {
     }
 }
 
-// Function to update patient list
 function updatePatientList() {
     const patientList = document.getElementById('patientList');
     patients.sort((a, b) => a.triageLevel - b.triageLevel);
@@ -47,7 +42,6 @@ function updatePatientList() {
     `).join('');
 }
 
-// Event listener for patient form submission
 document.getElementById('patientForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -67,7 +61,6 @@ document.getElementById('patientForm').addEventListener('submit', async function
     e.target.reset();
 });
 
-// Function to update Firebase Realtime Database
 async function updateFirebaseData() {
     const db = getDatabase();
     for (let i = 0; i < patients.length; i++) {
@@ -84,7 +77,6 @@ async function updateFirebaseData() {
     }
 }
 
-// Main function to get data and update patient list
 async function main() {
     await getData();
     updatePatientList();

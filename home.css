@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.2s ease-in-out;
 }
 
 .main-container {
@@ -76,10 +75,21 @@
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 491px) {
+    .nav {
+        height: 42px;
+    }
+
     .nav>div:first-child {
         font-size: 0.9rem;
-        font-weight: bolder;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 331px) {
+    .nav>div:first-child {
+        font-size: 0.9rem;
+        letter-spacing: 0px;
     }
 }
 
@@ -138,9 +148,21 @@
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 491px) {
     .moto {
-        margin-top: 72px;
+        margin-top: 65px;
+    }
+}
+
+@media (max-width: 419px) {
+    .moto {
+        height: 403px;
+    }
+}
+
+@media (max-width: 309px) {
+    .moto {
+        height: 317px;
     }
 }
 
@@ -174,6 +196,19 @@
     }
 }
 
+@media (max-width: 419px) {
+    .moto h3 {
+        font-size: 2rem;
+        letter-spacing: 0;
+    }
+}
+
+@media (max-width: 309px) {
+    .moto h3 {
+        font-size: 1.5rem;
+    }
+}
+
 .moto>h3 span:first-child {
     color: #435261;
 }
@@ -200,6 +235,7 @@
     align-items: center;
     justify-content: space-around;
     box-shadow: 4px 5px 15px 2px;
+    transition: all 0.2s ease-in-out;
 }
 
 @media (max-width: 1050px) {
@@ -225,6 +261,14 @@
         height: 48px;
         font-size: 25px;
         padding-left: 6px;
+    }
+}
+
+@media (max-width: 373px) {
+    .moto>div {
+        width: 122px;
+        height: 37px;
+        font-size: 18px;
     }
 }
 
@@ -290,12 +334,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 395px) {
+    .card {
+        height: 320px;
+    }
 }
 
 @media (max-width: 354px) {
     .card {
         width: 269px;
-        height: 308px;
+        height: 252px;
     }
 }
 
@@ -342,6 +393,21 @@
 
 .card>div>img {
     width: 50px;
+}
+
+@media (max-width: 395px) {
+    .card>img {
+        width: 61%;
+    }
+
+    .card>div {
+        height: 46px;
+        width: 46px;
+    }
+
+    .card>div>img {
+        width: 30px;
+    }
 }
 
 .card1 {
@@ -398,33 +464,47 @@
 }
 
 @media (max-width: 761px) {
-    .motive{
+    .motive {
         height: 72px;
+        gap: 11px;
     }
 }
 
 @media (max-width: 625px) {
-    .motive{
+    .motive {
         height: 51px;
         gap: 17px;
     }
 }
 
 @media (max-width: 493px) {
-    .motive{
+    .motive {
         height: 42px;
         gap: 17px;
     }
 }
 
+@media (max-width: 385px) {
+    .motive {
+        padding: 0 12px;
+        gap: 6px;
+    }
+}
+
 @media (max-width: 341px) {
-    .motive{
-        padding: 0 14px;
+    .motive {
+        padding: 0 10px;
     }
 }
 
 .motive>img {
     width: 48px;
+}
+
+@media (max-width: 761px) {
+    .motive>img {
+        width: 36px;
+    }
 }
 
 @media (max-width: 625px) {
@@ -464,15 +544,10 @@
     }
 }
 
-@media (max-width: 493px) {
+@media (max-width: 498px) {
     .motive>span {
-        font-size: 17px;
-    }
-}
-
-@media (max-width: 417px) {
-    .motive>span {
-        letter-spacing: 1px;
+        font-size: 22px;
+        letter-spacing: 0;
     }
 }
 
@@ -499,6 +574,12 @@
     }
 }
 
+@media (max-width: 759px) {
+    .vision>h1 {
+        font-size: 48px;
+    }
+}
+
 @media (max-width: 637px) {
     .vision>h1 {
         font-size: 45px;
@@ -521,7 +602,7 @@
     background-color: #425160;
 }
 
-@media (max-width: 637px) {
+@media (max-width: 759px) {
     .vision>h1::after {
         bottom: 5px;
     }
@@ -549,8 +630,47 @@ footer {
     align-items: center;
 }
 
+@media (max-width: 759px) {
+    .vision>p {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 499px) {
+    .vision>p {
+        font-size: 17px;
+    }
+}
+
 @media (max-width: 435px) {
-    footer>p{
+    .vision>p {
+        letter-spacing: 0;
+    }
+}
+
+@media (max-width: 664px) {
+    footer {
+        height: 28px;
+    }
+
+    footer>p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 435px) {
+    footer>p {
         font-size: 10px;
+    }
+}
+
+@media (max-width: 396px) {
+    footer {
+        height: 23px;
+    }
+
+    footer>p {
+        font-size: 8px;
+        font-weight: 700;
     }
 }

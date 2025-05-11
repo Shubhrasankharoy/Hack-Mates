@@ -1,13 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js';
 import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js';
 import { getMessaging, getToken } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-messaging.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyB9utGKsSRxTblN5IJgq9u8gzNPyFtNTKI",
     authDomain: "showdown-8c6f2.firebaseapp.com",
@@ -18,11 +13,8 @@ const firebaseConfig = {
     measurementId: "G-5Z4WWN48FQ"
   };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// Initialize Firebase Authentication
 const auth = getAuth();
-// Initialize Firebase Cloud Messaging and get a reference to the service
 const messaging = getMessaging();
 
 
@@ -49,17 +41,14 @@ sign_up_btn.addEventListener("click", (e) => {
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed up 
             const user = userCredential.user;
             alert("Creating...");
             login_btn.click();
-            // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             alert(error);
-            // ..
         });
 })
 
@@ -71,11 +60,9 @@ sign_in_btn.addEventListener("click", (e) => {
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in 
             const user = userCredential.user;
             alert("Login...");
             window.location.href = "home.html";
-            // ...
         })
         .catch((error) => {
             const errorCode = error.code;

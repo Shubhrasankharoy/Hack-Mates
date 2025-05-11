@@ -1,7 +1,6 @@
 
 const { createApp } = Vue;
 
-// Initialize emailjs
 (function () {
     emailjs.init({
         publicKey: "R71ziGBLO8_dehXJg",
@@ -80,7 +79,7 @@ createApp({
                 to_name: 'Ram Biswas',
                 from_name: "HOSPITAL MANAGEMENT SYSTEM",
                 message: "Alert: One of the supplies is low!",
-                to_gmail: 'tuekejanis.5@gmail.com'
+                to_gmail: 'shubhrasankharoy@gmail.com'
             };
 
             emailjs.send("service_xu1bvyg", 'template_k2aqsou', param)

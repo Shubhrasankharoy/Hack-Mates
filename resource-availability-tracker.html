@@ -12,7 +12,6 @@
 
 <body>
     <div id="app">
-        <!-- Login Modal -->
         <div v-if="showLoginModal" class="modal">
             <div class="modal-content">
                 <h3>Admin Login</h3>
@@ -34,7 +33,6 @@
             </div>
         </div>
 
-        <!-- Header -->
         <header class="header">
             <h1>Hospital Resources Tracker</h1>
             <p>Real-time availability dashboard</p>
@@ -43,7 +41,6 @@
             </button>
         </header>
 
-        <!-- Stats Grid -->
         <div class="grid">
             <div v-for="stat in stats" :key="stat.title" class="stat-card">
                 <h3>{{ stat.title }}</h3>
@@ -56,7 +53,6 @@
             </div>
         </div>
 
-        <!-- Supplies Section -->
         <section class="supplies">
             <h2>Medical Supplies</h2>
             <div class="grid">
@@ -71,7 +67,6 @@
             </div>
         </section>
 
-        <!-- Last Updated -->
         <footer class="footer">
             Last updated: {{ lastUpdated }}
         </footer>
