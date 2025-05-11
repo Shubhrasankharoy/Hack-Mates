@@ -4,7 +4,7 @@ A comprehensive web application designed to streamline hospital operations, prio
 
 ## Live Demo
 
-🔗 [Hospital Management System](https://shubhrasankharoy.github.io/Hack-Mates/home.html)
+🔗 [Hospital Management System](https://shubhrasankharoy.github.io/Hack-Mates/)
 
 ## Features
 
