@@ -1,9 +1,11 @@
-
+const SERVICEID = "service_xu1bvyg"
+const TEMPLATEID = 'template_k2aqsou'
+const PUBLICKEY = "R71ziGBLO8_dehXJg"
 const { createApp } = Vue;
 
 (function () {
     emailjs.init({
-        publicKey: "R71ziGBLO8_dehXJg",
+        publicKey: PUBLICKEY,
     });
 })();
 
@@ -82,7 +84,7 @@ createApp({
                 to_gmail: 'shubhrasankharoy@gmail.com'
             };
 
-            emailjs.send("service_xu1bvyg", 'template_k2aqsou', param)
+            emailjs.send(SERVICEID, TEMPLATEID, param)
                 .then(response => {
                     console.log('Email sent successfully:', response.status, response.text);
                 })
