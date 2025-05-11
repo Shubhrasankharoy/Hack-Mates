@@ -62,7 +62,7 @@ A comprehensive web application designed to streamline hospital operations, prio
    ```
 2. Navigate to project directory:
    ```sh
-   cd hospital-management-system
+   cd Hack-Mates
    ```
 3. Set up Firebase:
     - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
@@ -82,7 +82,7 @@ A comprehensive web application designed to streamline hospital operations, prio
 
     - Set up EmailJS account
 
-    - Add service ID and template ID in `resource-availability-tracker.js`
+    - Add public key, service ID and template ID in `resource-availability-tracker.js`
      ```sh
     const SERVICEID = 'YOUR_SERVICE_ID'
     const TEMPLATEID = 'YOUR_TEMPLATE_ID'
