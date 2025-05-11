@@ -91,7 +91,7 @@ A comprehensive web application designed to streamline hospital operations, prio
 5. Open `index.html` in your browser
 
 ## License
-    This project is licensed under the **MIT License**.
+  This project is licensed under the **MIT License**
 
 ## Team
 
